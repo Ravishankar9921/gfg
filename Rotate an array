@@ -1,0 +1,29 @@
+    void RevArr(int j,int arr[],int n)
+    {   
+       while(j<n)
+       {
+           int temp;
+           temp=arr[n];
+           arr[n]=arr[j];
+           arr[j]=temp;
+           j++;n--;
+       }
+    }
+    //Function to rotate an array by d elements in counter-clockwise direction. 
+    void rotateArr(int arr[], int d, int n){
+        // code here
+        if(d<=n)
+        {
+        RevArr(0,arr,d-1);
+        RevArr(d,arr,n-1);
+        RevArr(0,arr,n-1);
+        }
+        else
+        {
+            d=d%n;
+        RevArr(0,arr,d-1);
+        RevArr(d,arr,n-1);
+        RevArr(0,arr,n-1);
+        }
+    }
+};
